@@ -6,37 +6,37 @@ This example is part of the Cisco [*Network as Code*](https://netascode.cisco.co
 
 More information can be found here: [https://netascode.cisco.com/solutions/aci/comprehensive_example](https://netascode.cisco.com/solutions/aci/comprehensive_example).
 
-## Leaf Interface Configuration Options
+### Leaf Interface Configuration Options
 
 This example includes multiple methods to configure the interfaces on the ACI leaf switches.
 
-### Option 01
+#### Option 01
 
 The "new" API-friendly method of configuring interfaces results in fewer API calls to APIC. When using this method APIC creates system-generated Leaf Switch Profiles which are mapped 1:1 to (system generated) Leaf Interface Profiles with Access Port Selectors names matching the Interface Policy Group name.
 
-Files can be found in (`data/option-01`)
+Files can be found in (`data/02_access-policies/interface-configuration-option-01`)
 
-### Option 02
+#### Option 02
 
 This option produces the same structure as Option 01 where each Leaf Switch Profile maps (1:1) to a unique Leaf Interface Profile, however it provides more flexibility by avoiding system-generated names.
 
-Files can be found in (`data/option-02`)
+Files can be found in (`data/02_access-policies/interface-configuration-option-02`)
 
-### Option 03
+#### Option 03
 
 This option configures each interface on each switch individually. It is less API-friendly than Option 01 or Option 02 as it create more API calls. Whilst a valid configuration method, this option should ideally be avoided due to the additional API impact on large scale networks.
 
-Files can be found in (`data/option-03`)
+Files can be found in (`data/02_access-policies/interface-configuration-option-03`)
 
 ---
 
-## Resource Impact Analysis
+### Resource Impact Analysis
 
 The following table details the number of resources created when applying the different interface configuration methods found in this example i.e. the configuration files in:
 
-- data/02_access-policies/interfaceconfiguration-option-01
-- data/02_access-policies/interfaceconfiguration-option-02
-- data/02_access-policies/interfaceconfiguration-option-03
+- data/02_access-policies/interface-configuration-option-01
+- data/02_access-policies/interface-configuration-option-02
+- data/02_access-policies/interface-configuration-option-03
 
 | Option  | Base Resources | Scaling Impact                                      |
 |--------|----------------|----------------------------------------------------|
